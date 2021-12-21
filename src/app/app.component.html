@@ -1,1 +1,26 @@
-<h1>Meu primeiro componente</h1>
+<h1>{{ title }}</h1>
+
+<ul>
+  <li *ngFor="let todo of todos">
+    {{ todo.id }} | {{ todo.title }} |
+    <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button> |
+    <button *ngIf="todo.done" (click)="markAsUnDone(todo)">refazer</button> |
+    <button (click)="remover(todo)">remover</button>
+  </li>
+</ul>
+
+<form [formGroup]="form">
+  <fieldset>
+    <label>Task</label>
+    <input
+      type="text"
+      placeholder="insira o titulo da tarefa"
+      maxlength="60"
+      formControlName="title"
+    />
+    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
+      >this field has must 3 by 60 character
+    </small>
+    <button>Save</button>
+  </fieldset>
+</form>
