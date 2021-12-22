@@ -34,7 +34,7 @@ this is a project that make task management
 ## Project Description
 
 <em>This Picture Show About List Task that was Added</em>
-<img src="./assets/img/firstAppDesk.png" width="300px" height="300px"/>
+<img src="./src/assets/img/firstAppDesk.png" width="300px" height="300px"/>
 
 ## Code scaffolding
 
