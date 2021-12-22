@@ -1,4 +1,4 @@
-<h1>{{ title }}</h1>
+<h1 class="title">{{ title }}</h1>
 
 <ul>
   <p *ngIf="todos.length==0"><small>ainda não tem tarefa hoje!</small></p>
@@ -22,6 +22,6 @@
     <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
       >this field has must 3 by 60 character
     </small>
-    <button [disabled]="form.invalid" (click)="addTask()">Save</button>
+    <button [disabled]="form.invalid" (click)="addTask()" class="button">Save</button>
   </fieldset>
 </form>
