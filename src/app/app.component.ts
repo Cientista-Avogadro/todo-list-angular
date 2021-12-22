@@ -23,6 +23,7 @@ export class AppComponent {
         ]),
       ],
     });
+    this.loadTaskOnLocalStorage();
   }
 
   addTask() {
@@ -36,17 +37,23 @@ export class AppComponent {
   remover(todo: Todo) {
     const index = this.todos.indexOf(todo);
     index !== -1 && this.todos.splice(index, 1);
+    this.saveTaskOnLocalStorage();
   }
 
   markAsDone(todo: Todo) {
     todo.done = true;
+    this.saveTaskOnLocalStorage();
   }
   markAsUnDone(todo: Todo) {
     todo.done = false;
+    this.saveTaskOnLocalStorage();
   }
 
   saveTaskOnLocalStorage() {
-    const data = JSON.stringify(this.todos);
-    localStorage.setItem("todos", data);
+    localStorage.setItem("todos", JSON.stringify(this.todos));
+  }
+
+  loadTaskOnLocalStorage() {
+    this.todos = JSON.parse(localStorage.getItem("todos"));
   }
 }
