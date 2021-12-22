@@ -23,9 +23,13 @@ export class AppComponent {
         ]),
       ],
     });
-    this.todos.push(new Todo(1, "ir ao super mercado", false));
-    this.todos.push(new Todo(2, "Estudar angular", true));
-    this.todos.push(new Todo(3, "ir para cama", false));
+  }
+
+  addTask() {
+    const title = this.form.controls["title"].value;
+    const id = this.todos.length + 1;
+    this.todos.push(new Todo(id, title, false));
+    this.form.reset();
   }
 
   remover(todo: Todo) {
@@ -39,6 +43,4 @@ export class AppComponent {
   markAsUnDone(todo: Todo) {
     todo.done = false;
   }
-
-  
 }

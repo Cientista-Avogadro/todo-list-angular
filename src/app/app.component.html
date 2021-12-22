@@ -1,6 +1,7 @@
 <h1>{{ title }}</h1>
 
 <ul>
+  <p *ngIf="todos.length==0"><small>ainda não tem tarefa hoje!</small></p>
   <li *ngFor="let todo of todos">
     {{ todo.id }} | {{ todo.title }} |
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
@@ -21,6 +22,6 @@
     <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
       >this field has must 3 by 60 character
     </small>
-    <button [disabled]="form.invalid">Save</button>
+    <button [disabled]="form.invalid" (click)="addTask()">Save</button>
   </fieldset>
 </form>
