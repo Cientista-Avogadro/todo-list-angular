@@ -1,7 +1,7 @@
-<h1 class="title">{{ title }}</h1>
+<h1 class="title animated jackInTheBox">{{ title }}</h1>
 
-<ul>
-  <p *ngIf="todos.length==0"><small>ainda não tem tarefa hoje!</small></p>
+<ul class="animated flipInX" *ngIf="mode == 'list'">
+  <p *ngIf="todos.length == 0"><small>ainda não tem tarefa hoje!</small></p>
   <li *ngFor="let todo of todos">
     {{ todo.title }} |
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
@@ -10,18 +10,33 @@
   </li>
 </ul>
 
-<form [formGroup]="form">
-  <fieldset>
-    <label>Task</label>
-    <input
-      type="text"
-      placeholder="insira o titulo da tarefa"
-      maxlength="60"
-      formControlName="title"
-    />
-    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
-      >this field has must 3 by 60 character
-    </small>
-    <button [disabled]="form.invalid" (click)="addTask()" class="button">Save</button>
-  </fieldset>
-</form>
+<div id="modal" *ngIf="mode == 'add'" class="animated flipInX">
+  <form [formGroup]="form">
+    <fieldset>
+      <label>Task</label>
+      <input
+        type="text"
+        placeholder="insira o titulo da tarefa"
+        maxlength="60"
+        formControlName="title"
+      />
+      <small
+        *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
+        >this field has must 3 by 60 character
+      </small>
+      <button [disabled]="form.invalid" (click)="addTask()" class="button">
+        Save
+      </button>
+    </fieldset>
+  </form>
+</div>
+
+<button class="add-button animated fadeInUp button" (click)="changeMode('add')" *ngIf="mode == 'list'" >
+  <i class="fas fa-plus"></i>
+  New Tast
+</button>
+<button class="add-button animated fadeInUp button" (click)="changeMode('list')" *ngIf="mode == 'add'">
+  <i class="fas fa-times"></i>
+  Cancel
+</button>
+

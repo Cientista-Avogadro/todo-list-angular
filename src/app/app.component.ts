@@ -8,6 +8,7 @@ import { Todo } from "src/models/todo.model";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
+  public mode = "list";
   public todos: Todo[] = [];
   public title: String = "My Task List";
   public form: FormGroup;
@@ -55,5 +56,9 @@ export class AppComponent {
 
   loadTaskOnLocalStorage() {
     this.todos = this.todos ? JSON.parse(localStorage.getItem("todos")) : [];
+  }
+
+  changeMode(mode) {
+    this.mode = mode;
   }
 }
