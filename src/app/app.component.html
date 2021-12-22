@@ -3,7 +3,7 @@
 <ul>
   <p *ngIf="todos.length==0"><small>ainda não tem tarefa hoje!</small></p>
   <li *ngFor="let todo of todos">
-    {{ todo.id }} | {{ todo.title }} |
+    {{ todo.title }} |
     <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
     <button *ngIf="todo.done" (click)="markAsUnDone(todo)">refazer</button> |
     <button (click)="remover(todo)">remover</button>
