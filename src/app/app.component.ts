@@ -54,6 +54,6 @@ export class AppComponent {
   }
 
   loadTaskOnLocalStorage() {
-    this.todos = JSON.parse(localStorage.getItem("todos"));
+    this.todos = this.todos ? JSON.parse(localStorage.getItem("todos")) : [];
   }
 }
