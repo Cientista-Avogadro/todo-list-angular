@@ -8,8 +8,8 @@ body {
   font-weight: 300;
   font-style: normal;
   text-align: center;
-  background: #3023ae;
-  background: linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
+  background: #0a0713;
+  background: linear-gradient(60deg, #09040e 10%, #06030c 70%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3023ae', endColorstr='#c86dd7');
 }
 
@@ -22,7 +22,8 @@ ul {
   margin: 10px;
   padding: 10px;
   list-style: none;
-  background: #fff;
+  background:none;
+  border: 1px solid #5f0afc;
   border-radius: 10px;
   box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
 }
@@ -32,16 +33,20 @@ li {
   margin: 10px;
   font-size: 1em;
   font-style: italic;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #5f0afc;
+  color: #5b15dd;
 }
 
 li > button {
   border: none;
-  background: #fff;
-  font-size: 1em;
+  background: none;
+  font-size: 1.5em;
   float: right;
   opacity: 0.5;
   transition: opacity 1s;
+}
+li > button >i{
+  color: #5f0afc;
 }
 
 li > button:hover {
@@ -51,7 +56,7 @@ li > button:hover {
 
 .title {
   font-family: "Dancing Script", cursive;
-  color: #fff;
+  color: #5f0afc;
   font-size: 5rem;
   text-shadow: 3px 5px #000;
 }
@@ -61,10 +66,10 @@ li > button:hover {
 }
 
 .button {
-  background-color: #000;
-  border: none;
+  background: none;
+  border: 1px solid #5f0afc;;
   padding: 20px;
-  color: #fff;
+  color: #5f0afc;
   border-radius: 30px;
   font-size: 1em;
   font-weight: 100;
@@ -74,23 +79,37 @@ li > button:hover {
 
 #modal {
   text-align: left;
-  margin: 10px;
-  padding: 10px;
+  margin: 20px;
+  padding: 30px;
   list-style: none;
-  background: #fff;
+  background:none;
+  border: 1px solid #5f0afc;
   border-radius: 10px;
   box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
 }
 
 #modal>h1{
   font-weight: 300;
+  color: #5b15dd;
+}
+
+label{
+  color: #5b15dd;
 }
 
 input{
-  width: 100%;
+  background: none;
+  outline: none;
+  border: 1px solid #5f0afc;
+  color: #5b15dd;
   line-height: 50px;
   text-indent: 10px;
   font-size: 1.2em;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+input::placeholder{
+  color: #5f0afc;
 }
 
 .danger{
@@ -100,3 +119,14 @@ input{
   padding: 5px;
   margin-top: 5px;
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form button{
+  margin: 10px 0;
+}
+

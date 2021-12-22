@@ -1,12 +1,18 @@
-<h1 class="title animated jackInTheBox">{{ title }}</h1>
+<h1 class="title animated heartBeat">{{ title }}</h1>
 
-<ul class="animated flipInX" *ngIf="mode == 'list'">
-  <p *ngIf="todos.length == 0"><small>ainda não tem tarefa hoje!</small></p>
+<ul class="animated heartBeat" *ngIf="mode == 'list'">
+  <p class="text-center" *ngIf="todos.length == 0">
+    <small>ainda não tem tarefa hoje!</small>
+  </p>
   <li *ngFor="let todo of todos">
-    {{ todo.title }} |
-    <button *ngIf="!todo.done" (click)="markAsDone(todo)">concluir</button>
-    <button *ngIf="todo.done" (click)="markAsUnDone(todo)">refazer</button> |
-    <button (click)="remover(todo)">remover</button>
+    {{ todo.title }}
+    <button (click)="remover(todo)"><i class="far fa-trash-alt"></i></button>
+    <button *ngIf="!todo.done" (click)="markAsDone(todo)">
+      <i class="far fa-check-circle"></i>
+    </button>
+    <button *ngIf="todo.done" (click)="markAsUnDone(todo)">
+      <i class="fas fa-check-circle"></i>
+    </button>
   </li>
 </ul>
 
@@ -20,12 +26,13 @@
       maxlength="60"
       formControlName="title"
     />
-    <small class="danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
-      >this field has must 3 by 60 character <br>
+    <small
+      class="danger"
+      *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
+      >this field has must 3 by 60 character
     </small>
-    <br>
     <button [disabled]="form.invalid" (click)="addTask()" class="button">
-     <i class="fas fa-save"></i>
+      <i class="fas fa-save"></i>
       Save
     </button>
   </form>
