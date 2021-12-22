@@ -2,19 +2,39 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
-##Install App Dependencies
-Run npm install
+## Install App Dependencies
+
+Run `npm install` in your terminal
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## About Project
 
+this is a project that make task management
 
+<p>Which Are Tech was used?</p>
 
+<ul>
+  <li>Angular v7</li>
+  <li>Font Awesome</li>
+  <li>Animate css</li>
+</ul>
 
+<p>What Project Do it?</p>
+<ul>
+  <li>List All Task</li>
+  <li>Delete Especific Task</li>
+  <li>Mark Done Especific Task</li>
+  <li>Mark UnDone Especific Task</li>
+  <li>Add New Task</li>
+</ul>
 
+## Project Description
 
+<em>This Picture Show About List Task that was Added</em>
+<img src="./assets/img/firstAppDesk.png" width="300px" height="300px"/>
 
 ## Code scaffolding
 
