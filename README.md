@@ -34,7 +34,34 @@ this is a project that make task management
 ## Project Description
 
 <em>This Picture Show About List Task that was Added</em>
-<img src="./src/assets/img/firstAppDesk.png" width="300px" height="300px"/>
+
+<h4>DeskTop View mode</h4>
+<br>
+<img src="./src/assets/img/firstAppDesk.png"/>
+<br>
+<h4>Mobile View mode</h4>
+<br>
+<img src="./src/assets/img/firstAppMobile.png"/>
+<br>
+<br>
+
+<em>This Picture Show About Add New Task</em>
+
+<h4>DeskTop View mode</h4>
+<br>
+<img src="./src/assets/img/firstAppDeskAddTask.png"/>
+<br>
+<h4>Mobile View mode</h4>
+<br>
+<img src="./src/assets/img/firstAppMobileAddTask.png"/>
+<br>
+<br>
+
+
+<em>This Picture Show About Fiel Validate</em>
+<br>
+<img src="./src/assets/img/firstAppDeskFielValidate.png"/>
+<br>
 
 ## Code scaffolding
 
