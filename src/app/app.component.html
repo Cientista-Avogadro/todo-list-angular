@@ -11,32 +11,39 @@
 </ul>
 
 <div id="modal" *ngIf="mode == 'add'" class="animated flipInX">
+  <h1 class="text-center">New Task</h1>
   <form [formGroup]="form">
-    <fieldset>
-      <label>Task</label>
-      <input
-        type="text"
-        placeholder="insira o titulo da tarefa"
-        maxlength="60"
-        formControlName="title"
-      />
-      <small
-        *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
-        >this field has must 3 by 60 character
-      </small>
-      <button [disabled]="form.invalid" (click)="addTask()" class="button">
-        Save
-      </button>
-    </fieldset>
+    <label>Task</label>
+    <input
+      type="text"
+      placeholder="insira o titulo da tarefa"
+      maxlength="60"
+      formControlName="title"
+    />
+    <small class="danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine"
+      >this field has must 3 by 60 character <br>
+    </small>
+    <br>
+    <button [disabled]="form.invalid" (click)="addTask()" class="button">
+     <i class="fas fa-save"></i>
+      Save
+    </button>
   </form>
 </div>
 
-<button class="add-button animated fadeInUp button" (click)="changeMode('add')" *ngIf="mode == 'list'" >
+<button
+  class="add-button animated fadeInUp button"
+  (click)="changeMode('add')"
+  *ngIf="mode == 'list'"
+>
   <i class="fas fa-plus"></i>
   New Tast
 </button>
-<button class="add-button animated fadeInUp button" (click)="changeMode('list')" *ngIf="mode == 'add'">
+<button
+  class="add-button animated fadeInUp button"
+  (click)="changeMode('list')"
+  *ngIf="mode == 'add'"
+>
   <i class="fas fa-times"></i>
   Cancel
 </button>
-

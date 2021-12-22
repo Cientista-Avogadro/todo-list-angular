@@ -52,6 +52,7 @@ export class AppComponent {
 
   saveTaskOnLocalStorage() {
     localStorage.setItem("todos", JSON.stringify(this.todos));
+    this.mode = "list";
   }
 
   loadTaskOnLocalStorage() {
